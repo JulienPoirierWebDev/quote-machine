@@ -31,7 +31,7 @@ const QuoteWrapper = () => {
 
 
     return (
-        <div id="quote-box" className={"transition-size p-3 max-w-screen-md m-auto rounded-md bg-purple-500"}>
+        <div id="quote-box" className={"transition-size duration-800 p-3 sm:w-3/4 md:w-1/2 xl:w-1/2 w-3/4  m-auto rounded-md bg-purple-500"}>
             <QuoteBox quote={quote} author={author} show={show}/>
             <QuoteOptions
                 handleChange={() => setCensored(!censored)}
