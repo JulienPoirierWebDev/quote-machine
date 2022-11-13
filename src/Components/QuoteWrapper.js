@@ -4,7 +4,7 @@ import QuoteOptions from "./QuoteOptions";
 
 const QuoteWrapper = () => {
 
-    const [quote, setQuote] = React.useState('');
+    const [quote, setQuote] = React.useState('CHARGEMENT EN COURS :)');
     const [author, setAuthor] = React.useState('');
     const [show, setShow] = React.useState();
     const [censored, setCensored] = React.useState(false);
@@ -21,6 +21,8 @@ const QuoteWrapper = () => {
                 setQuote(data.quote);
                 setAuthor(data.role);
                 setShow(data.show);
+                setLoading(false);
+
             });
     }
 
@@ -31,8 +33,12 @@ const QuoteWrapper = () => {
 
 
     return (
-        <div id="quote-box" className={"transition-size duration-800 p-3 sm:w-3/4 md:w-1/2 xl:w-1/2 w-3/4  m-auto rounded-md bg-purple-500"}>
-            <QuoteBox quote={quote} author={author} show={show}/>
+        <div id="quote-box" className={"relative z-50 transition-size duration-800 p-3 sm:w-3/4 md:w-1/2 xl:w-1/2 w-3/4  m-auto rounded-md bg-purple-700"}>
+            {loading ?
+                <p className={"text-center text-xl"}>LOADING </p>
+                : <QuoteBox quote={quote} author={author} show={show}/>
+            }
+
             <QuoteOptions
                 handleChange={() => setCensored(!censored)}
                 handleClick={getQuote}

@@ -2,7 +2,7 @@ import QuoteWrapper from "./Components/QuoteWrapper";
 
 function App() {
   return (
-      <div className=" flex flex-col justify-center h-screen w-screen ">
+      <div className="bg-gray-900 flex flex-col justify-center h-screen w-screen ">
           <QuoteWrapper/>
       </div>
   );
