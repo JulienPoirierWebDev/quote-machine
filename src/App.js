@@ -1,7 +1,9 @@
+import QuoteWrapper from "./Components/QuoteWrapper";
+
 function App() {
   return (
-      <div>
-        Hello World
+      <div className=" flex flex-col justify-center h-screen w-screen ">
+          <QuoteWrapper/>
       </div>
   );
 }
